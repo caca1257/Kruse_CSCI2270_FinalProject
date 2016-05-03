@@ -33,7 +33,7 @@ int main(){
 	setupPlayerBoard(playerTwo,playerOne,playerTwoBoard);
 
 	bool gameIsOver = false;
-
+	bool playAgain = true; //declaration of play again 
 	//Operate game, cycling between users until game is over.
 	while (!gameIsOver){
 		gameIsOver = playTwoPlayerGame(playerOne, playerTwo, playerOneBoard, playerTwoBoard);
@@ -51,6 +51,15 @@ int main(){
 	}
 	else{
 		playerTwoBoard.congratsOnWinning(playerTwo, playerOne);
+	}
+	while(playAgain){
+		setupPlayerBoard(string _name1, string _name2, BattleShipBoard &_playerBoard)
+		char again; // for user to play again
+		cout<<"Play again? Enter yes or no."<<endl;
+		cin >> again;
+		if(again != 'y'){
+			playAgain = false;
+		}
 	}
 
     cout << "CU later!" << endl;    
